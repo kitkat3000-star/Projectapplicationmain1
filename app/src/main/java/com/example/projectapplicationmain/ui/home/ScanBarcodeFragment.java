@@ -28,9 +28,9 @@ public class ScanBarcodeFragment extends Fragment {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     String userID =  mAuth.getCurrentUser().getUid();
     DocumentReference dREF;
-//    docREF = firenode.collection("users").document(userID);
+//   docREF = firenode.collection("users").document(userID);
 String OCR_License_INPUt;
-String Verified;
+String Verified = "Z 12345";
 
 
 
@@ -64,7 +64,7 @@ String Verified;
                     Toast.makeText(getActivity(), "Verification successful", Toast.LENGTH_SHORT).show();
                     navController.navigate(R.id.action_navigation_scanbarcode_to_navigation_parking);
                 } else {
-                    Toast.makeText(getActivity(), "Registration unsucessfull", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Registration unsuccessful", Toast.LENGTH_SHORT).show();
                 }
 
 
