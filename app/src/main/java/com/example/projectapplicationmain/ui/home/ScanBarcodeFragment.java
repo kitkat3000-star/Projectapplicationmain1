@@ -30,7 +30,7 @@ public class ScanBarcodeFragment extends Fragment {
     DocumentReference dREF;
 //   docREF = firenode.collection("users").document(userID);
 String OCR_License_INPUt;
-String Verified = "Z 12345";
+String Verified;
 
 
 
