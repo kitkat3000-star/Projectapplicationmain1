@@ -1,7 +1,5 @@
 package com.example.projectapplicationmain;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,14 +20,14 @@ public class MainActivity extends Activity {
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MainActivity2.class);
+                Intent i = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(i);            }
         });
 
         RegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MainActivity3.class);
+                Intent i = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(i);
             }
         });

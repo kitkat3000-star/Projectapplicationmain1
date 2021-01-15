@@ -22,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity3 extends Activity {
+public class RegisterActivity extends Activity {
     EditText regName;
     EditText regEmail;
     EditText regPass;
@@ -60,24 +60,25 @@ public class MainActivity3 extends Activity {
                 String REGISTER_phone_Num = regPhoneNo.getText().toString();
                 String REGISTER_license_Num = regLicenseNo.getText().toString();
                 mAuth.createUserWithEmailAndPassword(txt_email, txt_password)
-                        .addOnCompleteListener(MainActivity3.this, new OnCompleteListener<AuthResult>() {
+                        .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(MainActivity3.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
                                     userID = mAuth.getCurrentUser().getUid();
-                                    dREF = FirestoreNode.collection("users").document(userID);
+                                    dREF = FirestoreNode.collection("Users").document(userID);
                                     Map<String, String> USERS = new HashMap<String, String>();
-                                    USERS.put("Name", REGISTER_name);
-                                    USERS.put("License_Num", REGISTER_license_Num);
-                                    USERS.put("Phone_Num", REGISTER_phone_Num);
-                                    USERS.put("Email", txt_email);
+                                    USERS.put("email", txt_email);
+                                    USERS.put("licensePlate", REGISTER_license_Num);
+                                    USERS.put("name", REGISTER_name);
+                                    USERS.put("phoneNumber", REGISTER_phone_Num);
+
                                     dREF.set(USERS);
-                                    Intent i = new Intent(MainActivity3.this, MainActivity4.class);
+                                    Intent i = new Intent(RegisterActivity.this, MainActivity4.class);
                                     startActivity(i);
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(MainActivity3.this, "Registration unsucessfull", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "Registration unsucessfull", Toast.LENGTH_SHORT).show();
 
                                 }
 
