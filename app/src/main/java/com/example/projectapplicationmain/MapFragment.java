@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -16,7 +15,10 @@ import androidx.navigation.Navigation;
 public class MapFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_map, container, false);
+    //    Meridian.configure(getActivity(), "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsIjo1NjU2MDkwNTExNTQwMjI0LCJ0IjoxNjEwNzI5Nzk4fQ.zDLJQ2aV8JzEAikFjx_Q1iwDlj7-ee4q2ZoViV1qGBA");
+      //  EditorKey mapkey = EditorKey.forApp("Basement1", appKey.getID())
+
+         return inflater.inflate(R.layout.fragment_map, container, false);
     }
 
     @Override
